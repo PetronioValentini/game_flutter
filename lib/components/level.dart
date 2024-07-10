@@ -25,7 +25,6 @@ class Level extends World {
     return super.onLoad();
   }
 
-  
   Future<void> _scrollingBackGround() async {
     // Carrega a imagem de fundo
     final backgroundImage = await Sprite.load('background/backgroundimage.png');
@@ -38,10 +37,6 @@ class Level extends World {
 
     // Adiciona o componente de fundo ao mundo
     add(background);
-  }
-  
-
-  Future<void> _scrollingBackGround() async {
   }
 
   void _spawningObjects() {
