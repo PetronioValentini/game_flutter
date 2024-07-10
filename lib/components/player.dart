@@ -2,8 +2,10 @@ import 'dart:async';
 
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flame/events.dart';
 import 'package:flutter/services.dart';
 import 'package:pixel_adventure/components/collision_block.dart';
+import 'package:pixel_adventure/components/laser.dart';
 import 'package:pixel_adventure/components/player_hitbox.dart';
 import 'package:pixel_adventure/components/utils.dart';
 import 'package:pixel_adventure/pixel_adventure.dart';
@@ -31,6 +33,9 @@ class Player extends SpriteAnimationGroupComponent
   final double _terminalVelocity = 300;
   bool isOnGround = false;
   bool hasJumped = false;
+
+  Vector2 laserDirection = Vector2.zero();
+
   List<CollisionBlock> collisionBlocks = [];
 
   PlayerHitbox hitbox = PlayerHitbox(
@@ -71,8 +76,16 @@ class Player extends SpriteAnimationGroupComponent
     final isLeftKeyPressed = keysPressed.contains(LogicalKeyboardKey.arrowLeft);
     final isRightKeyPressed =
         keysPressed.contains(LogicalKeyboardKey.arrowRight);
-
+    final isSpaceBarPressed = keysPressed.contains(LogicalKeyboardKey.space);
     // se e verdadeiro -1 se e falso 0
+
+    if (isSpaceBarPressed) {
+      Laser laser = Laser();
+      laser.anchor = const Anchor(-0.097, -9); // EXATAMENTE DO OLHO DO GATO
+      add(laser);
+  
+    }
+
     horizontalMoviment += isLeftKeyPressed ? -1 : 0;
     horizontalMoviment += isRightKeyPressed ? 1 : 0;
 
