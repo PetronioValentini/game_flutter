@@ -23,9 +23,6 @@ class Player extends SpriteAnimationGroupComponent
 
   final double stepTime = 0.1; // 0.1
 
-  // Escala dos personagens de 4.0x
-  //final Vector2 characterScale = Vector2(4.0, 4.0);
-
   double horizontalMoviment = 0;
   double moveSpeed = 150;
   Vector2 velocity = Vector2.zero();
@@ -41,18 +38,12 @@ class Player extends SpriteAnimationGroupComponent
     offsetY: 70,
     width: 50,
     height: 60,
-    /*offsetX: 10,
-    offsetY: 17,
-    width: 15,
-    height: 15,
-    */
   );
 
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimations();
 
-    //scale = characterScale; // Definir a escala do personagem
     debugMode = true;
     add(
       RectangleHitbox(
