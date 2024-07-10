@@ -1,0 +1,121 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "FrozenMap-01.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "Todos os Ficheiros (*)",
+    "fileStates": {
+        "AltarOfHarmony_2.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "AltarOfHarmony_3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "AltarOfHarmony_4.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "FrozenMap-01.tmx": {
+            "expandedObjectLayers": [
+                4,
+                2
+            ],
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 676.6666666666665,
+                "y": 700.3333333333333
+            }
+        },
+        "FrozenMap-02.tmx": {
+            "scale": 1.37,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 719.7080291970804,
+                "y": 479.9270072992701
+            }
+        },
+        "FrozenMap-03.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 1.1298828125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 368.1797752808989,
+                "y": 450.9317199654278
+            }
+        },
+        "FrozenMap.tmx": {
+            "scale": 1.503375,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 454.31113328344566,
+                "y": 289.68154984617945
+            }
+        },
+        "Pixel Adventure.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "background.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "ground.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "teste.tmx": {
+            "scale": 0.38164930555555554,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1441.1135877723698,
+                "y": 1471.2459627894282
+            }
+        }
+    },
+    "last.exportedFilePath": "C:/Users/petro/OneDrive/Área de Trabalho",
+    "last.imagePath": "C:/Users/petro/OneDrive/Documentos/flutter/pixel_adventure/assets/images/frozen_map_tileset",
+    "map.height": 240,
+    "map.lastUsedExportFilter": "Ficheiros Lua (*.lua)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 4,
+    "map.tileWidth": 4,
+    "map.width": 360,
+    "openFiles": [
+        "FrozenMap-01.tmx",
+        "FrozenMap-02.tmx",
+        "AltarOfHarmony_2.tsx"
+    ],
+    "project": "",
+    "recentFiles": [
+        "AltarOfHarmony_2.tsx",
+        "FrozenMap-02.tmx",
+        "FrozenMap-01.tmx",
+        "FrozenMap-03.tmx",
+        "AltarOfHarmony_4.tsx",
+        "AltarOfHarmony_3.tsx",
+        "teste.tmx",
+        "ground.tsx",
+        "FrozenMap.tmx",
+        "background.tsx",
+        "Pixel Adventure.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.margin": 0,
+    "tileset.spacing": 0,
+    "tileset.tileSize": {
+        "height": 4,
+        "width": 4
+    }
+}
