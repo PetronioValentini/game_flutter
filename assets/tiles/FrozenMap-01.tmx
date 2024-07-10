@@ -263,6 +263,6 @@
   <object id="35" x="1440" y="0" height="856"/>
  </objectgroup>
  <objectgroup id="2" name="Spawnpoints" class="Player">
-  <object id="1" name="Player" type="Player" x="544" y="784" width="24" height="24"/>
+  <object id="1" name="Player" type="Player" x="628" y="664" width="24" height="24"/>
  </objectgroup>
 </map>

@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import 'package:flame/events.dart';
 import 'package:flutter/services.dart';
 import 'package:pixel_adventure/components/collision_block.dart';
 import 'package:pixel_adventure/components/laser.dart';
@@ -33,6 +32,7 @@ class Player extends SpriteAnimationGroupComponent
   final double _terminalVelocity = 300;
   bool isOnGround = false;
   bool hasJumped = false;
+  bool isPowerLeft = false;
 
   Vector2 laserDirection = Vector2.zero();
 
@@ -77,13 +77,31 @@ class Player extends SpriteAnimationGroupComponent
     final isRightKeyPressed =
         keysPressed.contains(LogicalKeyboardKey.arrowRight);
     final isSpaceBarPressed = keysPressed.contains(LogicalKeyboardKey.space);
-    // se e verdadeiro -1 se e falso 0
 
     if (isSpaceBarPressed) {
-      Laser laser = Laser();
-      laser.anchor = const Anchor(-0.097, -9); // EXATAMENTE DO OLHO DO GATO
-      add(laser);
-  
+      Vector2 direction;
+      if (scale.x > 0) {
+        direction = Vector2(1, 0); // Personagem virado para a direita
+      } else {
+        direction = Vector2(-1, 0); // Personagem virado para a esquerda
+        isPowerLeft = true;
+        
+      }
+      Laser laser = Laser(
+        startPosition: position.clone(),
+        loadSpriteFunction: (path) => Sprite.load(path),
+        direction: direction.normalized(),
+      );
+
+      if (isPowerLeft) {
+        laser.flipHorizontallyAroundCenter();
+        isPowerLeft = false;
+      }
+
+      laser.anchor = const Anchor(
+          0.07, 0); // EXATAMENTE DO OLHO DO GATO const Anchor(0.07, 0);
+      // ADICIONA O LASER PARA O PAI 
+      parent!.add(laser);
     }
 
     horizontalMoviment += isLeftKeyPressed ? -1 : 0;

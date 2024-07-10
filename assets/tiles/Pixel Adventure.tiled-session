@@ -25,14 +25,14 @@
         },
         "FrozenMap-01.tmx": {
             "expandedObjectLayers": [
-                4,
-                2
+                2,
+                4
             ],
             "scale": 1.1,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 956.3636363636364,
-                "y": 380.4545454545454
+                "x": 720,
+                "y": 479.54545454545456
             }
         },
         "FrozenMap-02.tmx": {

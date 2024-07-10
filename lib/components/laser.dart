@@ -1,40 +1,58 @@
 import 'package:flame/components.dart';
-import 'package:flutter/material.dart';
 
-class Laser extends SpriteComponent {
-  Laser({Vector2? position, Vector2? direction})
+class Laser extends SpriteAnimationComponent {
+  final Future<Sprite> Function(String) loadSpriteFunction;
+  final Vector2 direction; // Armazena a direção do disparo
+  final Vector2 startPosition; // Nova propriedade para a posição inicial
+
+  Laser(
+      {super.position,
+      required this.startPosition, // Parâmetro adicionado para a posição inicial
+      required this.direction,
+      required this.loadSpriteFunction})
       : super(
-          position: position,
-          size: Vector2(1000, 10), // Tamanho do raio laser
+          size: Vector2(1000, 150), // Tamanho do raio laser
         );
 
   final double _speed = 500; // Velocidade do raio laser
-  final Paint _paint = Paint()..color = Colors.red; // Cor do raio laser
 
   @override
   Future<void> onLoad() async {
     // Carregar o sprite de forma assíncrona
-    final spriteImage = await Sprite.load(
-        'background/backgroundimage.png'); // Substitua 'empty.png' pelo caminho da sua imagem
+    final List<Sprite> sprites = await Future.wait([
+      loadSpriteFunction('powers/laser/pulse1.png'),
+      loadSpriteFunction('powers/laser/pulse2.png'),
+      loadSpriteFunction('powers/laser/pulse3.png'),
+      loadSpriteFunction('powers/laser/pulse4.png'),
+    ]);
 
-    // Atribuir o sprite carregado à variável sprite
-    sprite = spriteImage;
+    // Criar animação
+    final spriteAnimation = SpriteAnimation.spriteList(
+      sprites,
+      stepTime: 0.15, // Tempo de exibição de cada quadro (em segundos)
+    );
 
-    // Chamar super.onLoad() depois de carregar o sprite
+    // Atribuir a animação ao componente
+    animation = spriteAnimation;
+    position.setFrom(startPosition); // Define a posição inicial do laser como a posição fornecida
+    // Chamar super.onLoad() depois de carregar a animacao
     await super.onLoad();
   }
 
   @override
   void update(double dt) {
     super.update(dt);
-    position += Vector2(2, 0) * _speed * dt; // Movimento do raio laser
+    position += direction * _speed * dt; // Movimento do raio laser
   }
-
+}
+  /*
   @override
   void render(Canvas canvas) {
     super.render(canvas);
-
+     LASER DESENHADO
     canvas.drawRect(
         Rect.fromLTWH(0, 0, size.x, size.y), _paint); // Desenha o raio laser
+    
   }
-}
+  */
+
